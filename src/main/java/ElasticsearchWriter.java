@@ -42,7 +42,7 @@ public class ElasticsearchWriter {
 
             // transform each row into a map of fields
             for (int i = 1; i < columns.length; i++) {
-                if (data[i] != null) {
+                if (i < data.length && !data[i].isEmpty()) {
                     String fieldName = columns[i];
                     switch (fieldName) {
                         case "dateAdded":
